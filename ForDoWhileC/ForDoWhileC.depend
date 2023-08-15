@@ -1,0 +1,6 @@
+# depslib dependency file v1.0
+1692115064 source:c:\users\utilizador\documents\software developer\c_language\fordowhilec\main.c
+	<stdio.h>
+	<stdlib.h>
+	<string.h>
+

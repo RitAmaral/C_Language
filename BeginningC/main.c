@@ -149,6 +149,13 @@ int main()
     } // Outputs "Quase fim-de-semana!"
 
 
+    //scanf - pede dados ao utilizador
+    int idade3;
+    printf("\n\nQual a tua idade? ");
+    scanf("%i\n", &idade3);
+    printf("Tens %i anos", idade3);
+
+
 
 
     printf("\n");
