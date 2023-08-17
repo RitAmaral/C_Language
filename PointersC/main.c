@@ -3,7 +3,21 @@
 
 int main()
 {
-    //Variáveis Pointers armazenam moradas de outras variáveis
+    //Variáveis Pointers armazenam endereços de memória de outras variáveis
+
+    //Memory Address
+
+     /*
+        Quando uma variável é criada em C, um endereço de memória é atribuído à variável.
+        O endereço de memória é o local onde a variável é armazenada no computador.
+        Quando atribuímos um valor à variável, ele é armazenado neste endereço de memória.
+        Para acessá-lo, usamos o operador de referência (&), e o resultado representa onde a variável está armazenada.
+     */
+
+     /*
+        Os pointers são importantes em C, pois permitem manipular os dados na memória do computador -
+        isto pode reduzir o código e melhorar o desempenho.
+     */
 
     /* Operadores de pointers:
         & - address-of operator
@@ -15,7 +29,7 @@ int main()
     float preco = 10.50;
 
     printf("%.2f\n", preco); //output é o valor de preco = 10.50
-    printf("%p\n\n", &preco); //output é a morada da memória = 000000000061FE08
+    printf("%p\n\n", &preco); //usar %p para obter endereço; output é a morada da memória = 000000000061FE08
 
     //Definir pointers:
     int * pQua; //colocar * e um p de pointer
@@ -30,7 +44,7 @@ int main()
     /*
         a variável age tem na memória 19, e a variável pAge tem na memória 18826 (por exemplo) que é a morada de age,
         enquanto que a morada de pAge pode ser por exemplo 20886.
-        A variável pAge aponta para age se pAge armazena a localidade de age.
+        A variável pAge aponta para age se pAge armazena o endereço de age.
      */
 
     /*
@@ -44,7 +58,7 @@ int main()
 
      *pAge = 25;
      printf("%d\n", *pAge); //output é 25, logo armazena 25 onde aponta, que é para a memória do age. => dereferenciar
-     printf("%d\n\n", pAge); //isto dá a morada de pAge que é 6422024.
+     printf("%d\n\n", pAge); //isto dá o endereço de memória de pAge que é 6422024.
 
 
      //Pointers e Arrays
@@ -63,7 +77,7 @@ int main()
 
      //ou com pointers assim:
      *(myNumbers + 1) = 26;
-     printf("%d\n", *(myNumbers + 1));
+     printf("%d\n", *(myNumbers + 1)); //mostra o segundo elemento, se for +2 mostra o terceiro elemento, etc
 
 
     return 0;
