@@ -22,7 +22,7 @@ Using pointers allows more flexibility than arrays. You can directly assign a st
 
 • Use either array subscript notation (myNumbers[0]) or pointer dereferencing (*(myNumbers + 0)) to access array and pointer values.
 
-### Heap
+## Heap
 
 The **heap is the collection of unused memory in your computer**. The only way to access data stored in heap memory is through pointer variables.
 
