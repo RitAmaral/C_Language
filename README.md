@@ -41,3 +41,22 @@ Key notes:
 
 • Don’t always rely on regular arrays to hold a program’s data. Sometimes a program needs data for just a short time, and using the heap makes better use of your memory resources.
 
+## Structures
+
+A structure is an aggregate variable data type. Whereas an array must hold values that are all the same data type, a structure can hold several values of different data types.
+
+Before using a structure variable, you must tell C exactly what the structure looks like with a struct statement. The struct statement lets C know how many members are in the structure and the data types of each member. A structure variable is like a group of more than one variable of different data types. Key concepts:
+
+• Define structures when you want to group items of different data types.
+
+• Declare a structure before defining a structure variable.
+
+• Use the dot operator to access individual data members within a structure variable.
+
+• Use the -> (the structure pointer operator) to access individual data members within a structure pointed to by a pointer variable.
+
+• Don’t use member names as variables. Member names exist only so you can work with an individual part of a structure.
+
+• Don’t forget to add a semicolon to the end of all structure definitions.
+
+• Don’t intermix the dot operator and the structure pointer operator. Remember that a structure variable must appear before the dot operator, and a structure pointer variable must appear before the -> operator
