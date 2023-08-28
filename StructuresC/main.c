@@ -1,9 +1,10 @@
 #include <stdio.h>
 #include <stdlib.h>
+FILE * fptr; //define um file pointer chamado fptr
 
 int main()
 {
-    /* ------------------- Structures --------------------------- */
+    /* ------------------- Structures e Files --------------------------- */
 
     //este struct contém informação sobre um livro
     struct bookInfo {
@@ -20,26 +21,40 @@ int main()
     //pedir informação sobre os 3 livros ao user:
     for (i = 0; i < 3; i++) {
         printf("Qual o nome do livro #%d?\n", (i+1));
-        gets(books[i].title);
+        fgets(books[i].title, sizeof(books[i].title), stdin);
         puts("Nome do autor? ");
-        gets(books[i].author);
+        fgets(books[i].author, sizeof(books[i].author), stdin);
         puts("Quanto custou o livro? ");
         scanf(" %f", &books[i].price);
         puts("Quantas paginas tem o livro? ");
         scanf(" %d", &books[i].pages);
-        getchar(); //Clears last newline for next loop
+        getchar(); //Limpa a última quebra de linha para o próximo loop
     }
 
+    //conectar o pointer ao ficheiro com fopen()
+    //escrever o caminho do ficheiro, colocar duas barras // em vez de uma
+    //w = modo escrever/write - cria um novo ficheiro quer ele exista ou não
+    //r = modo leitura que permite ler um ficheiro existente, se o ficheiro não existe, dá erro
+    //a = append mode, que deixa adicionar ao fim do ficheiro ou criar ficheiro caso não exista
+    fptr = fopen("C:\\Users\\Utilizador\\Documents\\Software Developer\\C_Language\\StructuresC\\InfoLivros.txt","w");
 
-    //mostra informação recebida pelo user:
-    printf("Informacao dos livros:\n");
+    //ver se o ficheiro abriu
+    if(fptr == 0) {
+        printf("Erro -- ficheiro nao foi aberto.");
+        exit (1);
+    }
+
+     //mostra informação recebida pelo user, e coloca-a no ficheiro
+    fprintf(fptr, "\nInformacao dos livros:\n"); //usar fprint para escrever no ficheiro
 
     for (i = 0; i < 3; i++) {
-        printf("#%d: \"%s\", por %s",
+        fprintf(fptr, "#%d: \"%s\", por %s",
                (i+1), books[i].title, books[i].author);
-        printf("\nCustou $%.2f, e tem %d paginas", books[i].price, books[i].pages);
-        printf("\n\n");
+        fprintf(fptr, "\nCustou $%.2f, e tem %d paginas", books[i].price, books[i].pages);
+        fprintf(fptr, "\n\n");
     }
+
+    fclose(fptr); //fechar sempre que abro um ficheiro
 
     return 0;
 }

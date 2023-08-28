@@ -1,0 +1,17 @@
+
+Informacao dos livros:
+#1: "Harry Potter e a Pedra Filosofal
+", por JK Rowling
+
+Custou $16.90, e tem 309 paginas
+
+#2: "Dune
+", por Frank Herbert
+
+Custou $12.50, e tem 896 paginas
+
+#3: "The Ink Black Heart
+", por JK Rowling
+
+Custou $28.50, e tem 1024 paginas
+
