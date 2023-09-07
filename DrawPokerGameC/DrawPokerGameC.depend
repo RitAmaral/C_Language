@@ -1,0 +1,7 @@
+# depslib dependency file v1.0
+1694080076 source:c:\users\utilizador\documents\software developer\c_language\drawpokergamec\main.c
+	<stdio.h>
+	<stdlib.h>
+	<time.h>
+	<ctype.h>
+
